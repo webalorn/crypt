@@ -1,0 +1,66 @@
+body {
+	background: black;
+}
+body.floor {
+	background: url(images/floor.png) repeat black;
+}
+body.dancefloor {
+	background: url(images/dancefloor.gif) repeat black;
+}
+
+#stairs {
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%);
+	top: 30%;
+	left: 50%;
+	cursor: pointer;
+	width: 250px;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+#arrow {
+	position: absolute;
+	transform: translateX(-50%) translateY(50%);
+	top: 30%;
+	left: 50%;
+	width: 250px;
+	max-width: 100%;
+	max-height: 100%;
+}
+
+.dancing {
+	position: absolute;
+	transform: translateX(-50%) translateY(-50%);
+	top: 50%;
+	left: 50%;
+	width: 480px;
+	max-width: 100%;
+	max-height: 100%;
+	display: none;
+}
+
+#put-audio {
+	height:  3em;
+	width: 100%;
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	background: #6c0063;
+	z-index: 100;
+	color: white;
+}
+#put-audio img {
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 1em;
+}
+#put-audio span {
+	font-size: 2em;
+	font-weight: bold;
+	line-height: 1.5em;
+	position: absolute;
+	top: 0px;
+	left: 3em;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Dancing skeleton</title>
+	<link rel="stylesheet" type="text/css" href="crypt.css">
+	<script type="text/javascript" src="crypt.js"></script>
+</head>
+<body>
+	<div id="put-audio">
+		<img src="images/audio.png" />
+		<span>Turn on the sound</span>
+	</div>
+	<img src="images/skeleton.gif" class="dancing" />
+	<img src="images/stairs.png" id="stairs" />
+	<img src="images/arrow.gif" id="arrow" />
+
+	<script type="text/javascript">
+		window.onload = function() {
+			dance('music/crypteque.mp3');
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Let's go !</title>
+	<link rel="stylesheet" type="text/css" href="crypt.css">
+	<style type="text/css">
+		body.colorfloor {
+			animation-name: backgroundColorPalette;
+			animation-duration: 7s;
+			animation-iteration-count: infinite;
+			animation-direction: alternate;
+			animation-timing-function: linear;
+		}
+
+		@keyframes backgroundColorPalette {
+			0% {
+				background: #00F6DE;
+			}
+			25% {
+				background: #C500ED;
+			}
+			50% {
+				background: #17F105;
+			}
+			75% {
+				background: #F6EA00;
+			}
+			100% {
+				background: #F10C1A;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="put-audio">
+		<img src="images/audio.png" />
+		<span>Turn on the sound</span>
+	</div>
+	<img src="images/door.png" id="stairs" />
+	<img src="images/arrow3.gif" id="arrow" />
+
+	<img src="images/give-you-up.gif" class="dancing" />
+
+	<script type="text/javascript">
+		function dance() {
+			var audio = new Audio("music/give-you-up.mp3");
+			let stairs = document.getElementById("stairs");
+			let arrow = document.getElementById("arrow");
+			let dancing = document.querySelectorAll(".dancing");
+			let putAudio = document.getElementById("put-audio");
+			let body = document.querySelector("body");
+
+			stairs.addEventListener('click', event => {
+				audio.play();
+				audio.addEventListener('ended', function() {
+					this.currentTime = 0;
+					this.play();
+				}, false);
+
+				stairs.style.display = 'none';
+				arrow.style.display = 'none';
+				putAudio.style.display = 'none';
+				setTimeout(function() {
+					body.classList.add('colorfloor');
+				}, 1000);
+				setTimeout(function() {
+					for (let img of dancing) {
+						img.style.display = 'block';
+					}
+				}, 2500);
+			});
+		}
+
+		window.onload = dance
+	</script>
+</body>
+</html>
